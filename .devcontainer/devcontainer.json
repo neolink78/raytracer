@@ -1,0 +1,15 @@
+{
+  "name": "Raytracer (C++)",
+  "build": { "dockerfile": "Dockerfile" },
+  "postCreateCommand": "cmake --preset unix-debug",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cmake-tools",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "vadimcn.vscode-lldb"
+      ],
+      "settings": { "cmake.useCMakePresets": "always" }
+    }
+  }
+}
