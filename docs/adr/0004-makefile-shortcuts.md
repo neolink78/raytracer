@@ -14,7 +14,7 @@ A root `Makefile` wraps the CMake presets with `make build`, `make run`, `make t
 
 ## Status
 
-Proposed
+Accepted
 
 ## Consequences
 
