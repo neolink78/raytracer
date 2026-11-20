@@ -6,10 +6,19 @@ The project must compile and run the same way for every contributor, on macOS, W
 including partner studios with machines we do not control. Installing a C++ toolchain by hand gives
 each person a different compiler and version ("works on my machine").
 
-Alternatives considered: each contributor installs the tools natively; a package manager
-script per OS; a virtual machine (e.g. Vagrant).
+Alternatives considered, and why they fit worse:
 
-Our reason: the same tools for everyone.
+- **Each contributor installs the tools natively:** everyone ends up with a different compiler
+  and version (GCC, Clang, MSVC), so code that builds on one machine can fail on another. Beginners
+  also lose time installing and configuring a toolchain instead of writing code.
+- **A setup script per OS:** three scripts (Linux, macOS, Windows) to write and keep in sync, which
+  nobody can test on every OS; versions still drift with each system's package manager.
+- **A virtual machine (e.g. Vagrant):** gives the same environment, but is heavy (a full OS, several
+  GB, slow to start) and poorly integrated with our editors.
+
+Our reason: the environment is described once, in the repository, and VS Code and Zed open it
+directly. Every contributor gets the same compiler and tools in one step, and the CI can reuse the
+same image, so "it passes on my machine" means "it passes in CI".
 
 ## Decision
 
@@ -18,7 +27,7 @@ clangd, clang-format and gdb), opened with VS Code or Zed.
 
 ## Status
 
-Proposed
+Accepted
 
 ## Consequences
 
