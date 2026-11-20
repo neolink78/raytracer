@@ -4,6 +4,9 @@ A ray tracer written in C++20 — HETIC student project.
 
 - Discovery report: [docs/discovery/discovery-report.md](docs/discovery/discovery-report.md)
 - Architecture decisions: [docs/adr/](docs/adr/)
+- How to contribute: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Code of conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- Licence: [Apache-2.0](LICENSE)
 
 ## Getting started (dev container, recommended)
 
@@ -84,4 +87,15 @@ src/             program code (raytracer_core library + main.cpp)
 tests/           Catch2 tests
 docs/adr/        architecture decision records
 docs/discovery/  discovery report (milestone m0)
+.github/         CI workflow, pull request and issue templates
 ```
+
+## Contributing
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Every pull request is built
+and tested by the CI ([.github/workflows/ci.yml](.github/workflows/ci.yml)) inside the same dev
+container. Participation is covered by our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Licence
+
+Licensed under the [Apache License 2.0](LICENSE).

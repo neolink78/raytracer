@@ -22,3 +22,11 @@ Windows without the container: `cmake --workflow --preset windows-debug`.
 - Never go against an accepted ADR. To change a decision, write a new ADR with status
   `Proposed` and ask the maintainer.
 - Never set an ADR to `Accepted`.
+
+## Contributing
+
+- Contribution workflow (dev container, TDD, ADRs, pull requests): `CONTRIBUTING.md`.
+- The CI (`.github/workflows/ci.yml`) runs `make test` in the dev container on every pull request:
+  keep it green.
+- Pull request and issue templates are in `.github/`. Code of conduct: `CODE_OF_CONDUCT.md`.
+  Licence: Apache-2.0 (`LICENSE`).
