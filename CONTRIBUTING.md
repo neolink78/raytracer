@@ -34,7 +34,8 @@ container and must pass.
 
 We write the test first ([ADR 0003](docs/adr/0003-catch2.md): Catch2).
 
-1. **Red:** write a failing test in `tests/test_*.cpp` and add the file to `tests/CMakeLists.txt`.
+1. **Red:** write a failing test in the folder matching the code (`tests/math/test_vector.cpp` for
+   `src/math/vector.cpp`) and add new test files to `tests/CMakeLists.txt`.
 2. Run `make test` and check that it fails for the expected reason.
 3. **Green:** write the minimum code in `src/` to make it pass (new `.cpp` files go in
    `add_library(raytracer_core ...)` in `CMakeLists.txt`).

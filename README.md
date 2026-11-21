@@ -58,8 +58,9 @@ cmake --build --preset windows-debug-clean       # clean
 Tests use [Catch2 v3](https://github.com/catchorg/Catch2), downloaded automatically on the first
 configure (internet needed once), and are run by CTest.
 
-- Production code goes in `src/` and is compiled into the `raytracer_core` library.
-- Tests go in `tests/test_*.cpp` and link against `raytracer_core`.
+- Production code goes in `src/`, one folder per concept (`src/math/`, ...), and is compiled into
+  the `raytracer_core` library. Includes start from `src/`: `#include "math/vector.h"`.
+- Tests mirror `src/` (`tests/math/test_vector.cpp`) and link against `raytracer_core`.
 
 TDD loop:
 
@@ -84,8 +85,8 @@ Run a single test: `./build/unix-debug/tests/raytracer_tests "greeting uses the 
 
 ```
 .devcontainer/   dev container (Dockerfile + config)
-src/             program code (raytracer_core library + main.cpp)
-tests/           Catch2 tests
+src/             program code: main.cpp + one folder per concept (math/, ...)
+tests/           Catch2 tests, same folders as src/
 docs/adr/        architecture decision records
 docs/discovery/  discovery report (milestone m0)
 .github/         CI workflow, pull request and issue templates
