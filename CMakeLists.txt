@@ -36,6 +36,7 @@ add_library(raytracer_core
     src/render/trace.cpp
     src/image/image.cpp
     src/material/material.cpp
+    src/scene/scene.cpp
     src/output/png_saver.cpp
 )
 target_include_directories(raytracer_core PUBLIC src)
