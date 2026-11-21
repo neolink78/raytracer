@@ -1,19 +1,23 @@
 #include <iostream>
+#include <string>
 
 #include "colour/colour.h"
-#include "geometry/ray.h"
 #include "geometry/sphere.h"
+#include "image/image.h"
 #include "math/vector.h"
+#include "output/png_saver.h"
 #include "render/camera.h"
-#include "render/trace.h"
 
 int main() {
     Camera camera(Vector(0, 0, -1), Vector(0, 0, 0), 2);
     Sphere sphere(Vector(0, 0, 9), 5, Colour(1, 0, 0));
 
-    Ray ray = camera.rayThroughCentre();
-    Colour pixel = trace(ray, sphere);
+    Image image = camera.render(sphere, 400, 300);
 
-    std::cout << "(" << pixel.r() << ", " << pixel.g() << ", " << pixel.b() << ")\n";
+    std::string path = "image.png";
+    PngSaver saver;
+    saver.save(image, path);
+
+    std::cout << "Saved " << path << '\n';
     return 0;
 }
