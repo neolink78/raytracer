@@ -13,6 +13,7 @@ class Vector {
 
     double dot(const Vector& other) const;
     double length() const;
+    Vector normalised() const;
 
   private:
     double _x;

@@ -1,4 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/matchers/catch_matchers_floating_point.hpp>
 
 #include "vector.h"
 
@@ -86,4 +87,16 @@ TEST_CASE("length is the size of the vector") {
 
 TEST_CASE("length uses the z component too") {
     REQUIRE(Vector(3, 4, 12).length() == 13);
+}
+
+TEST_CASE("normalised keeps the direction and gives a length of 1") {
+    Vector unit = Vector(3, -4, 0).normalised();
+
+    REQUIRE_THAT(unit.x(), Catch::Matchers::WithinAbs(0.6, 1e-9));
+    REQUIRE_THAT(unit.y(), Catch::Matchers::WithinAbs(-0.8, 1e-9));
+    REQUIRE_THAT(unit.z(), Catch::Matchers::WithinAbs(0, 1e-9));
+}
+
+TEST_CASE("normalised gives a length of 1, with z too") {
+    REQUIRE_THAT(Vector(3, 4, 12).normalised().length(), Catch::Matchers::WithinAbs(1, 1e-9));
 }
