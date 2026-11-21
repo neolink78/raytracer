@@ -1,6 +1,6 @@
 # raytracer
 
-A ray tracer written in C++20 — HETIC student project.
+A ray tracer written in C++20, built step by step with TDD — HETIC student project.
 
 - Discovery report: [docs/discovery/discovery-report.md](docs/discovery/discovery-report.md)
 - Architecture decisions: [docs/adr/](docs/adr/)
