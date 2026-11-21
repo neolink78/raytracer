@@ -2,22 +2,22 @@
 
 #include "vector.h"
 
-TEST_CASE("add sums two vectors component by component") {
+TEST_CASE("a + b sums two vectors component by component") {
     Vector a(3, 4, 0);
     Vector b(4, -3, 0);
 
-    Vector sum = a.add(b);
+    Vector sum = a + b;
 
     REQUIRE(sum.x() == 7);
     REQUIRE(sum.y() == 1);
     REQUIRE(sum.z() == 0);
 }
 
-TEST_CASE("add sums the z components too") {
+TEST_CASE("a + b sums the z components too") {
     Vector a(3, 4, 1);
     Vector b(4, -3, 2);
 
-    Vector sum = a.add(b);
+    Vector sum = a + b;
 
     REQUIRE(sum.x() == 7);
     REQUIRE(sum.y() == 1);
