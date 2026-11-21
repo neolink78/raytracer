@@ -90,6 +90,7 @@ Run a single test: `./build/unix-debug/tests/raytracer_tests "a + b sums two vec
 src/             program code: main.cpp + one folder per concept (math/, ...)
 tests/           Catch2 tests, same folders as src/
 docs/adr/        architecture decision records
+docs/domain/     domain model
 docs/discovery/  discovery report (milestone m0)
 .github/         CI workflow, pull request and issue templates
 ```

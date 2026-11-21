@@ -100,7 +100,7 @@ sun, or the background colour.
 | Thing  | Knows                               | Can be asked                                   |
 |--------|-------------------------------------|------------------------------------------------|
 | Vector | x, y, z                             | add, subtract, scale, dot, length, normalised  |
-| Ray    | an origin, a direction              | the point at distance t: P(t) = O + t·D, t ≥ 0 |
+| Ray    | an origin, a direction              | the point at distance t: P(t) = O + t·D; a hit counts only for t > 0 |
 | Shape  | nothing: it is a role (sphere, plane) | the nearest hit of a ray in front of its origin, or nothing |
 | Sphere | a centre, a radius, a material      | where a ray hits it: t, point, unit normal      |
 | Plane  | a point, a unit normal, a material  | where a ray hits it: t, point, unit normal      |

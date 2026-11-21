@@ -33,7 +33,8 @@ We save PNG files with LodePNG (https://github.com/lvandeve/lodepng), fetched by
 publishes no releases). It is compiled as a static library, without our warning flags.
 
 Only `src/output/` uses LodePNG, behind our own `ImageSaver` interface: a `PngSaver` class adapts
-LodePNG to our `Image`. The rest of the code only knows "an image saver".
+LodePNG to our `Image`. The rest of the code only knows "an image saver". The only other place that
+includes LodePNG is the test of `PngSaver`, which reads the saved file back to check its bytes.
 
 ## Status
 
