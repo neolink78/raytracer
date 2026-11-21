@@ -67,3 +67,23 @@ TEST_CASE("the ray equation O + t * D gives the point at distance t") {
     REQUIRE(point.y() == 0);
     REQUIRE(point.z() == 0);
 }
+
+TEST_CASE("dot multiplies the components and adds them") {
+    REQUIRE(Vector(3, 4, 0).dot(Vector(4, 3, 0)) == 24);
+}
+
+TEST_CASE("dot of two perpendicular vectors is zero") {
+    REQUIRE(Vector(3, 4, 0).dot(Vector(4, -3, 0)) == 0);
+}
+
+TEST_CASE("dot uses the z components too") {
+    REQUIRE(Vector(3, 4, 12).dot(Vector(4, 3, 1)) == 36);
+}
+
+TEST_CASE("length is the size of the vector") {
+    REQUIRE(Vector(3, -4, 0).length() == 5);
+}
+
+TEST_CASE("length uses the z component too") {
+    REQUIRE(Vector(3, 4, 12).length() == 13);
+}

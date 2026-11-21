@@ -11,6 +11,9 @@ class Vector {
     Vector operator+(const Vector& other) const;
     Vector operator-(const Vector& other) const;
 
+    double dot(const Vector& other) const;
+    double length() const;
+
   private:
     double _x;
     double _y;
