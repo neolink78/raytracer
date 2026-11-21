@@ -38,3 +38,10 @@ TEST_CASE("a sphere gives back its colour") {
     REQUIRE_THAT(colour.g(), WithinAbs(0.5, tolerance));
     REQUIRE_THAT(colour.b(), WithinAbs(0, tolerance));
 }
+
+TEST_CASE("a sphere behind the eye is not hit") {
+    Ray ray(Vector(0, 0, -1), Vector(0, 0, 1));
+    Sphere sphere(Vector(0, 0, -11), 5, red);
+
+    REQUIRE_FALSE(sphere.isHitBy(ray));
+}
