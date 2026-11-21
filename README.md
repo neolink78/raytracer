@@ -31,7 +31,7 @@ whatever their OS.
 | `make test`  | build, then run the tests                |
 | `make clean` | delete the build folder                  |
 
-`make run` renders a red sphere to `image.png` (400×300, at the project root), and `make test` ends with `100% tests passed`.
+`make run` renders a red ball lit by the sun on a grey floor to `image.png` (400×300, at the project root), and `make test` ends with `100% tests passed`.
 Use `make PRESET=unix-release run` for an optimised build.
 
 The same thing with CMake directly:
