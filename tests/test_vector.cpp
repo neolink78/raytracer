@@ -12,3 +12,14 @@ TEST_CASE("add sums two vectors component by component") {
     REQUIRE(sum.y() == 1);
     REQUIRE(sum.z() == 0);
 }
+
+TEST_CASE("add sums the z components too") {
+    Vector a(3, 4, 1);
+    Vector b(4, -3, 2);
+
+    Vector sum = a.add(b);
+
+    REQUIRE(sum.x() == 7);
+    REQUIRE(sum.y() == 1);
+    REQUIRE(sum.z() == 3);
+}
