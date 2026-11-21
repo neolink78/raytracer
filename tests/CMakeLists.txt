@@ -14,6 +14,7 @@ add_executable(raytracer_tests
     colour/test_colour.cpp
     geometry/test_ray.cpp
     geometry/test_sphere.cpp
+    geometry/test_plane.cpp
     render/test_camera.cpp
     render/test_trace.cpp
     image/test_image.cpp
