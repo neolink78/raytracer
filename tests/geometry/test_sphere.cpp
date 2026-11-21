@@ -3,7 +3,7 @@
 #include "geometry/sphere.h"
 #include "test_helpers.h"
 
-static const Colour red(1, 0, 0);
+static const Material red(Colour(1, 0, 0));
 
 TEST_CASE("a ray through the centre of a sphere hits it") {
     Ray ray(Vector(0, 0, -1), Vector(0, 0, 1));
@@ -27,7 +27,7 @@ TEST_CASE("a ray outside the radius misses the sphere") {
 }
 
 TEST_CASE("a sphere gives back its colour") {
-    Sphere sphere(Vector(0, 0, 9), 5, Colour(1, 0.5, 0));
+    Sphere sphere(Vector(0, 0, 9), 5, Material(Colour(1, 0.5, 0)));
 
     requireColoursEqual(sphere.colour(), Colour(1, 0.5, 0));
 }

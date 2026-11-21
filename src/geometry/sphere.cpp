@@ -2,10 +2,10 @@
 
 #include <cmath>
 
-Sphere::Sphere(const Vector& centre, double radius, const Colour& colour)
-    : _centre(centre), _radius(radius), _colour(colour) {}
+Sphere::Sphere(const Vector& centre, double radius, const Material& material)
+    : _centre(centre), _radius(radius), _material(material) {}
 
-Colour Sphere::colour() const { return _colour; }
+Colour Sphere::colour() const { return _material.colour(); }
 
 bool Sphere::isHitBy(const Ray& ray) const {
     Vector L = ray.origin() - _centre;

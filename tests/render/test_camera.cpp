@@ -50,7 +50,7 @@ TEST_CASE("the ray through the bottom left pixel goes left and down") {
 
 TEST_CASE("render draws a red plus for a sphere in front of a 5 by 3 screen") {
     Camera camera(Vector(0, 0, -1), Vector(0, 0, 0), 5);
-    Sphere sphere(Vector(0, 0, 6), 5, Colour(1, 0, 0));
+    Sphere sphere(Vector(0, 0, 6), 5, Material(Colour(1, 0, 0)));
 
     Image image = camera.render(sphere, 5, 3);
 
