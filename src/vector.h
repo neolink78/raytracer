@@ -16,3 +16,5 @@ class Vector {
     double _y;
     double _z;
 };
+
+Vector operator*(double t, const Vector& v);

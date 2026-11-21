@@ -45,3 +45,13 @@ TEST_CASE("a - b subtracts the z components too") {
     REQUIRE(difference.y() == 4);
     REQUIRE(difference.z() == 4);
 }
+
+TEST_CASE("t * v scales every component") {
+    Vector v(3, -4, 1);
+
+    Vector scaled = 2.0 * v;
+
+    REQUIRE(scaled.x() == 6);
+    REQUIRE(scaled.y() == -8);
+    REQUIRE(scaled.z() == 2);
+}
