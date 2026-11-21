@@ -3,19 +3,19 @@
 #include "render/camera.h"
 #include "test_helpers.h"
 
-TEST_CASE("the ray through the centre leaves the eye towards the screen centre") {
+TEST_CASE("the ray through a single pixel leaves the eye towards the screen centre") {
     Camera camera(Vector(0, 0, -1), Vector(0, 0, 0), 2);
 
-    Ray ray = camera.rayThroughCentre();
+    Ray ray = camera.rayThroughPixel(0, 0, 1, 1);
 
     requireVectorsEqual(ray.origin(), Vector(0, 0, -1));
     requireVectorsEqual(ray.direction(), Vector(0, 0, 1));
 }
 
-TEST_CASE("the ray through the centre works for any eye and screen centre") {
+TEST_CASE("the ray through a single pixel works for any eye and screen centre") {
     Camera camera(Vector(1, 2, -1), Vector(4, 6, -1), 2);
 
-    Ray ray = camera.rayThroughCentre();
+    Ray ray = camera.rayThroughPixel(0, 0, 1, 1);
 
     requireVectorsEqual(ray.origin(), Vector(1, 2, -1));
     requireVectorsEqual(ray.direction(), Vector(3, 4, 0));
