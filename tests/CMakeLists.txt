@@ -17,6 +17,7 @@ add_executable(raytracer_tests
     render/test_camera.cpp
     render/test_trace.cpp
     image/test_image.cpp
+    material/test_material.cpp
     output/test_png_saver.cpp
 )
 target_include_directories(raytracer_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
