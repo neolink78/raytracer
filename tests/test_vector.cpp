@@ -55,3 +55,15 @@ TEST_CASE("t * v scales every component") {
     REQUIRE(scaled.y() == -8);
     REQUIRE(scaled.z() == 2);
 }
+
+TEST_CASE("the ray equation O + t * D gives the point at distance t") {
+    Vector origin(0, 8, 0);
+    Vector direction(3, -4, 0);
+    double t = 2;
+
+    Vector point = origin + t * direction;
+
+    REQUIRE(point.x() == 6);
+    REQUIRE(point.y() == 0);
+    REQUIRE(point.z() == 0);
+}
