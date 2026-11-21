@@ -8,7 +8,15 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(raytracer_tests test_greeting.cpp math/test_vector.cpp)
+add_executable(raytracer_tests
+    test_helpers.cpp
+    test_greeting.cpp
+    math/test_vector.cpp
+    colour/test_colour.cpp
+    geometry/test_ray.cpp
+    render/test_camera.cpp
+)
+target_include_directories(raytracer_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(raytracer_tests PRIVATE raytracer_core raytracer_warnings Catch2::Catch2WithMain)
 
 include(Catch)
