@@ -14,6 +14,7 @@ add_executable(raytracer_tests
     math/test_vector.cpp
     colour/test_colour.cpp
     geometry/test_ray.cpp
+    geometry/test_sphere.cpp
     render/test_camera.cpp
 )
 target_include_directories(raytracer_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
