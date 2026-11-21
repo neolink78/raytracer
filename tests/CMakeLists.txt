@@ -10,7 +10,6 @@ FetchContent_MakeAvailable(Catch2)
 
 add_executable(raytracer_tests
     test_helpers.cpp
-    test_greeting.cpp
     math/test_vector.cpp
     colour/test_colour.cpp
     geometry/test_ray.cpp

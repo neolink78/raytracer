@@ -1,10 +1,7 @@
 #include <catch2/catch_test_macros.hpp>
-#include <catch2/matchers/catch_matchers_floating_point.hpp>
 
 #include "geometry/sphere.h"
 #include "test_helpers.h"
-
-using Catch::Matchers::WithinAbs;
 
 static const Colour red(1, 0, 0);
 
@@ -32,11 +29,7 @@ TEST_CASE("a ray outside the radius misses the sphere") {
 TEST_CASE("a sphere gives back its colour") {
     Sphere sphere(Vector(0, 0, 9), 5, Colour(1, 0.5, 0));
 
-    Colour colour = sphere.colour();
-
-    REQUIRE_THAT(colour.r(), WithinAbs(1, tolerance));
-    REQUIRE_THAT(colour.g(), WithinAbs(0.5, tolerance));
-    REQUIRE_THAT(colour.b(), WithinAbs(0, tolerance));
+    requireColoursEqual(sphere.colour(), Colour(1, 0.5, 0));
 }
 
 TEST_CASE("a sphere behind the eye is not hit") {

@@ -31,7 +31,7 @@ whatever their OS.
 | `make test`  | build, then run the tests                |
 | `make clean` | delete the build folder                  |
 
-`make run` prints `Hello, World!` and `make test` ends with `100% tests passed`.
+`make run` prints the colour of the centre pixel, `(1, 0, 0)`, and `make test` ends with `100% tests passed`.
 Use `make PRESET=unix-release run` for an optimised build.
 
 The same thing with CMake directly:
@@ -67,10 +67,12 @@ TDD loop:
 1. **Red** — write a failing test in `tests/`:
    ```cpp
    #include <catch2/catch_test_macros.hpp>
-   #include "greeting.h"
 
-   TEST_CASE("greeting uses the given name") {
-       REQUIRE(greeting("Ray") == "Hello, Ray!");
+   #include "math/vector.h"
+   #include "test_helpers.h"
+
+   TEST_CASE("a + b sums two vectors component by component") {
+       requireVectorsEqual(Vector(3, 4, 0) + Vector(4, -3, 0), Vector(7, 1, 0));
    }
    ```
    A new test file must be added to `add_executable(raytracer_tests ...)` in `tests/CMakeLists.txt`.
@@ -79,7 +81,7 @@ TDD loop:
    `add_library(raytracer_core ...)` in `CMakeLists.txt`).
 4. **Refactor** — clean up, `make test` stays green.
 
-Run a single test: `./build/unix-debug/tests/raytracer_tests "greeting uses the given name"`.
+Run a single test: `./build/unix-debug/tests/raytracer_tests "a + b sums two vectors component by component"`.
 
 ## Project layout
 
