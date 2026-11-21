@@ -11,6 +11,7 @@
 
 class Scene {
   public:
+    // toLight is the direction towards the sun; the scene keeps it as a unit vector.
     explicit Scene(const Vector& toLight);
 
     Vector toLight() const;

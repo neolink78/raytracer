@@ -2,7 +2,7 @@
 
 #include <utility>
 
-Scene::Scene(const Vector& toLight) : _toLight(toLight) {}
+Scene::Scene(const Vector& toLight) : _toLight(toLight.normalised()) {}
 
 Vector Scene::toLight() const { return _toLight; }
 

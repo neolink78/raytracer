@@ -8,6 +8,7 @@ class Material {
     explicit Material(const Colour& colour);
 
     Colour colour() const;
+    // normal and toLight must be unit vectors.
     Colour shade(const Vector& normal, const Vector& toLight) const;
 
   private:
