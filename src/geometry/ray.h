@@ -8,6 +8,7 @@ class Ray {
 
     Vector origin() const;
     Vector direction() const;
+    Vector at(double t) const;
 
   private:
     Vector _origin;
