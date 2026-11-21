@@ -4,6 +4,7 @@ A ray tracer written in C++20, built step by step with TDD — HETIC student pro
 
 - Discovery report: [docs/discovery/discovery-report.md](docs/discovery/discovery-report.md)
 - Architecture decisions: [docs/adr/](docs/adr/)
+- Domain model: [docs/domain/domain-model.md](docs/domain/domain-model.md)
 - How to contribute: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Code of conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - Licence: [Apache-2.0](LICENSE)
